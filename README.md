@@ -16,9 +16,13 @@
 
 # Repository Structure:  
  /src/         → Python Flask backend code
+ 
  /exe/         → Executables or Jupyter demos 
+ 
  /static/      → CSS, JS, and icons for frontend
+ 
  /templates/   → HTML pages
+ 
  README.md     → This guide
 
 # Requirments: 
@@ -38,23 +42,28 @@
  ## option 1 : Run from Source (Recommended)
  
   1- clone the repo:
-  git clone 
+  
+  - git clone 
   https://github.com/YourUsername/YourRepoName.git
-  cd YourRepoName
+  cd Your Repo Name
 
   2- Create a virtual environment (optional):
-  python -m venv env
+  
+  - python -m venv env
   env\Scripts\activate      # Windows
   source env/bin/activate   # macOS/Linux
 
   3- install dependencies:
-  pip install -r requirements.txt
+  
+  - pip install -r requirements.txt
 
   4- Run the server:
-  python src/app.py
+  
+  - python src/app.py
 
   5- Open browser at:
-  http://127.0.0.1:5000
+  
+  - http://127.0.0.1:5000
 
  ## option 2 : Executable File  
 
