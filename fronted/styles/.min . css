@@ -1,0 +1,465 @@
+/* Arabic RTL Base Styles */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --body-font: 'Tahoma', 'Arial', sans-serif;
+}
+
+[dir="rtl"] * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[dir="rtl"] body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] main {
+    flex: 1;
+}
+
+/* RTL Accessibility */
+[dir="rtl"] a:focus, 
+[dir="rtl"] button:focus {
+    outline: 3px solid var(--warning-color);
+    outline-offset: 2px;
+}/* RTL Navigation - Large space between logo and links */
+[dir="rtl"] .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  [dir="rtl"] .navbar-brand {
+    margin-left: auto; /* Push logo to right */
+    margin-right: 0;
+  }
+  
+  [dir="rtl"] .navbar-collapse {
+    justify-content: flex-start; /* Push nav to left */
+    margin-right: auto; /* Fill remaining space */
+    padding-right: 34rem; /* Large space between links and logo */
+  }
+  
+  [dir="rtl"] .navbar-nav {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Language switch positioning */
+  [dir="rtl"] .language-switch-item {
+    margin-left: 2rem; /* Space between links and language toggle */
+    margin-right: 0;
+  }
+  
+  /* Maintain RTL text alignment */
+  [dir="rtl"] .nav-link {
+    text-align: right;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  
+  /* Adjust hover underline position */
+  [dir="rtl"] .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    width: calc(100% - 2rem);
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .nav-link:hover::after,
+.active.nav-link::after {
+    transform: scaleX(1);
+}
+  
+  /* Mobile view adjustments */
+  @media (max-width: 991.98px) {
+    [dir="rtl"] .navbar-brand {
+      margin-left: 0; /* Reset logo position */
+      margin-right: auto;
+    }
+    
+    [dir="rtl"] .navbar-collapse {
+      margin-right: 0;
+      padding-right: 1rem;
+    }
+    
+    [dir="rtl"] .navbar-nav {
+      padding-top: 1rem;
+    }
+    
+    [dir="rtl"] .language-switch-item {
+      margin-left: 0;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+  }
+  
+  
+  
+ 
+/* RTL Hero Slider */
+[dir="rtl"] .img-container {
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+[dir="rtl"] .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 0.5s ease;
+}/* Arabic RTL Carousel Adjustments */
+[dir="rtl"] .carousel-caption {
+    left: 10% !important;  /* Position on the right side */
+    right: auto !important;
+    text-align: right;      /* Text starts from right */
+    width: 400px;           /* Fixed width */
+    max-width: none !important;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.5rem;
+}
+
+[dir="rtl"] .carousel-caption .btn {
+    margin-right: 0;        /* Button aligned to right */
+    margin-left: auto;
+    display: block;
+    width: fit-content;
+}
+
+/* Reverse carousel control arrows */
+[dir="rtl"] .carousel-control-prev {
+    right: auto;
+    left: 15px;
+}
+
+[dir="rtl"] .carousel-control-next {
+    left: auto;
+    right: 15px;
+}
+
+/* Ensure text and button alignment matches RTL */
+[dir="rtl"] .carousel-caption h2,
+[dir="rtl"] .carousel-caption .lead {
+    text-align: right;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    [dir="rtl"] .carousel-caption {
+        width: 350px;
+        right: 5% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    [dir="rtl"] .carousel-caption {
+        width: 300px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    [dir="rtl"] .carousel-caption {
+        width: 250px;
+        right: 2% !important;
+        padding: 1rem;
+    }
+}
+/* RTL Cards */
+.service-card {
+    border-radius: 15px !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    border: none !important;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(98,77,233,0.1) 0%, rgba(255,255,255,0) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12) !important;
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .icon-wrapper {
+    transform: scale(1.1);
+}
+
+.bg-primary {
+    background-color:#0d6efd !important;
+}
+
+/* New animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.bounce-animate { 
+    animation: bounce 2s ease infinite; 
+}
+
+/* RTL Assessment */
+[dir="rtl"] .question-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+[dir="rtl"] .answer-btn {
+    min-width: 100px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+/* RTL Back to Top */
+[dir="rtl"] #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: auto;
+    width: 50px;
+    height: 50px;
+    display: none;
+    z-index: 99;
+    transition: all 0.3s ease;
+}
+
+/* RTL Form Elements */
+[dir="rtl"] .form-control {
+    text-align: right;
+}
+
+[dir="rtl"] .input-group > :not(:first-child):not(.dropdown-menu) {
+    margin-right: -1px;
+    margin-left: 0;
+    border-radius: 0.375rem 0 0 0.375rem !important;
+}
+
+[dir="rtl"] .input-group > .form-control:not(:first-child) {
+    border-radius: 0 0.375rem 0.375rem 0 !important;
+}
+
+/* RTL Text Utilities */
+[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+/* RTL Responsive Adjustments */
+@media (max-width: 992px) {
+    [dir="rtl"] .carousel-caption {
+        max-width: 60%;
+        right: 50%;
+        left: auto;
+        transform: translate(50%, -50%);
+    }
+}
+
+@media (max-width: 768px) {
+    [dir="rtl"] .img-container {
+        height: 50vh;
+        min-height: 400px;
+    }
+    
+    [dir="rtl"] .carousel-caption {
+        max-width: 80%;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .navbar-nav {
+        margin-right: 0;
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    [dir="rtl"] .img-container {
+        height: 40vh;
+        min-height: 300px;
+    }
+    
+    [dir="rtl"] .carousel-caption {
+        padding: 1rem;
+    }
+}
+
+/* RTL Services Section */
+.service-card {
+    border-radius: 15px !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    border: none !important;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(98,77,233,0.1) 0%, rgba(255,255,255,0) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12) !important;
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .icon-wrapper {
+    transform: scale(1.1);
+}
+
+.bg-primary {
+    background-color:#0d6efd !important;
+}
+
+/* RTL Test Scroller */
+[dir="rtl"] .test-scroller::before {
+    right: 0;
+    left: auto;
+    background: linear-gradient(270deg, rgba(255,255,255,0.8) 0%, transparent 100%);
+}
+
+[dir="rtl"] .test-scroller::after {
+    left: 0;
+    right: auto;
+    background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, transparent 100%);
+}
+
+/* RTL Additional Components */
+[dir="rtl"] #add-symptom {
+    min-width: 100px;
+}
+
+[dir="rtl"] #extra-symptom {
+    border-left: none;
+    border-right: 1px solid #ced4da;
+}
+
+/* RTL Animations (unchanged, just scoped) */
+[dir="rtl"] .pulse-animate { animation: pulse 2s infinite; }
+[dir="rtl"] .swing-animate { animation: swing 3s ease-in-out infinite; }
+[dir="rtl"] .bounce-animate { animation: bounce 2s ease infinite; }
+/* Full-width features section */
+[dir="rtl"] .feature-image {
+    position: relative;
+    overflow: hidden;
+}
+
+[dir="rtl"] .feature-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+/* Adjust padding for RTL */
+[dir="rtl"] .feature-list {
+    padding-right: 2rem;
+    padding-left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    [dir="rtl"] .feature-list {
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    [dir="rtl"] .feature-list {
+        padding-right: 0;
+    }
+}
