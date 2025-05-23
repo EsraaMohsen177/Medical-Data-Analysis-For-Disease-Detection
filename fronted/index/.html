@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="فحص الأعراض الصحية - قيم مخاطرك للإصابة بأمراض القلب والسكري والسرطان">
+    <title>تقييم خطر الأمراض | فاحص الأعراض الصحية</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/chart.js" as="script">
+    <link rel="preload" href="../css/styles.min.css" as="style">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="nav_bar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="الصفحة الرئيسية لفحص الأعراض الصحية">
+                <img src="../img/image (4).png" alt="شعار فاحص الأعراض الصحية" width="100" height="60" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">حول</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">الخدمات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="tests.html">الفحوصات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../templates/index.html" aria-label="التبديل إلى الإنجليزية">
+                            <i class="fas fa-language me-1"></i>
+                            <span class="d-none d-md-inline">English</span>
+                            <span class="d-inline d-md-none">EN</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Disease Tests Section -->
+    <section id="disease-tests" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-5 mb-3">تقييم خطر الأمراض</h1>
+                <p class="lead">اختر حالة لبدء تقييم الأعراض الخاص بك</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" id="heart">
+                    <div class="card disease-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="../img/heart.png" class="card-img h-100" alt="رسم توضيحي للقلب" loading="lazy" width="400" height="300">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-white text-center overlay-gradient">
+                            <h2 class="card-title h2">أمراض القلب</h2>
+                            <button class="btn btn-outline-light start-assessment" data-disease="heart">بدء التقييم</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" id="diabetes">
+                    <div class="card disease-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="../img/diabetes-.jpg" class="card-img h-100" alt="رسم توضيحي للسكري" loading="lazy" width="400" height="300">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-white text-center overlay-gradient">
+                            <h2 class="card-title h2">السكري</h2>
+                            <button class="btn btn-outline-light start-assessment" data-disease="diabetes">بدء التقييم</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" id="cancer">
+                    <div class="card disease-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="../img/Screenshot 2025-03-24 223718.png" class="card-img h-100" alt="رسم توضيحي للسرطان" loading="lazy" width="400" height="300">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-white text-center overlay-gradient">
+                            <h2 class="card-title h2">السرطان</h2>
+                            <button class="btn btn-outline-light start-assessment" data-disease="cancer">بدء التقييم</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Section (initially hidden) -->
+    <section id="assessment-section" class="py-5 bg-light" style="display: none;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-header bg-primary text-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h2 id="current-disease" class="h4 mb-0"></h2>
+                                <button id="cancel-checkup" class="btn btn-sm btn-outline-light">إلغاء</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="progress-container" class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <small>التقدم</small>
+                                    <small><span id="current-question">0</span>/<span id="total-questions">0</span></small>
+                                </div>
+                                <div class="progress">
+                                    <div id="question-progress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div id="question-container">
+                                <!-- Questions will be injected here by JavaScript -->
+                            </div>
+                            
+                            <div id="additional-symptom" style="display: none;">
+                                <hr>
+                                <h3 class="h5 mb-3">أضف أي أعراض أخرى</h3>
+                                <div class="input-group mb-3 has-validation">
+                                    <input type="text" id="extra-symptom" class="form-control" placeholder="أدخل عرضًا إضافيًا..." aria-label="عرض إضافي">
+                                    <button class="btn btn-primary" id="add-symptom" type="button">
+                                        <i class="fas fa-plus me-1"></i> إضافة
+                                    </button>
+                                </div>
+                                <div id="added-symptoms" class="mb-3"></div>
+                                <button id="finish-checkup" class="btn btn-primary w-100 py-2">الحصول على النتائج</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Results Section (initially hidden) -->
+<section id="results-section" class="py-5" style="display: none;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white">
+                        <h2 class="h4 mb-0">تقييمك الصحي</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Risk Chart with reduced width -->
+                        <div class="mb-5 text-center">
+                            <h3 class="h4 mb-4">تقييم المخاطر</h3>
+                            <div class="d-flex justify-content-center">
+                                <div class="chart-container" style="height: 300px; width: 80%; position: relative;">
+                                    <canvas id="riskChart" aria-label="مخطط تقييم المخاطر" role="img"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recommended Tests in side-by-side layout -->
+                        <div class="mb-4">
+                            <h3 class="h4 mb-4">الفحوصات الموصى بها</h3>
+                            <div id="recommended-tests" class="row g-4">
+                                <!-- Tests will be injected here by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                            <strong>تذكر:</strong> هذا ليس تشخيصًا طبيًا. يرجى استشارة أخصائي رعاية صحية.
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="mt-4">
+                            <h3 class="h4 mb-3">التوصيات الصحية</h3>
+                            <div id="health-recommendations"></div>
+                            
+                            <div class="d-flex justify-content-between mt-5">
+                                <button id="new-checkup" class="btn btn-primary">
+                                    <i class="fas fa-redo me-2"></i>بدء فحص جديد
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">فاحص الأعراض الصحية</h2>
+                    <p>مشروع تخرج من إعداد أميرة، إسراء، وملك من قسم علوم الحاسب والإحصاء بجامعة عين شمس، دفعة 2025.</p>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">روابط سريعة</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">الرئيسية</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white text-decoration-none">الخدمات</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">حول المشروع</a></li>
+                        <li class="mb-2"><a href="tests.html" class="text-white text-decoration-none">فحص الأعراض</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">إشراف المشروع</h2>
+                    <p>تحت إشراف <strong>أ.د. عزة عبد الرحمن</strong></p>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">&copy; 2025 فاحص الأعراض الصحية. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">
+                        <em>ملاحظة: هذا مشروع أكاديمي وليس مخصصًا للتشخيص الطبي.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="js/disease-checker.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
+</body>
+</html>
