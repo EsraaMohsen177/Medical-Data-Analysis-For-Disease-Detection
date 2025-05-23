@@ -1,0 +1,755 @@
+// Disease data structure in Arabic
+const diseases = {
+    heart: {
+        name: "أمراض القلب",
+        symptoms: [
+            "ألم في الصدر", 
+            "ضيق في التنفس", 
+            "ألم في الذراع/الفك", 
+            "عدم انتظام ضربات القلب", 
+            "تورم في الساقين",
+            "دوخة أو دوار",
+            "غثيان أو عسر هضم",
+            "تعرق بارد",
+            "إرهاق أثناء الأنشطة العادية",
+            "سعال مستمر أو أزيز",
+            "زيادة سريعة في الوزن (2-3 رطل في يوم)"
+        ],
+        tests: [
+            { 
+                name: "تخطيط القلب الكهربائي (ECG)",
+                info: "يسجل النشاط الكهربائي للقلب",
+                benefits: [
+                    "يكشف عن عدم انتظام ضربات القلب",
+                    "يحدد علامات النوبة القلبية",
+                    "يقيم النظام الكهربائي للقلب",
+                    "إجراء غير جراحي وغير مؤلم"
+                ],
+                description: "تخطيط القلب الكهربائي هو اختبار سريع وغير مؤلم يسجل الإشارات الكهربائية في قلبك. يتم وضع بقع صغيرة لاصقة (أقطاب كهربائية) على صدرك وذراعيك وساقيك. ترتبط هذه الأقطاب الكهربائية بجهاز تخطيط القلب الذي يسجل النشاط الكهربائي لقلبك.",
+                preparation: "لا يلزم أي تحضير خاص لتخطيط القلب الكهربائي القياسي. قد يُطلب منك تجنب ممارسة الرياضة أو شرب الماء البارد مباشرة قبل الاختبار.",
+                resultsInfo: "تظهر النتائج الطبيعية معدل ضربات قلب بين 60-100 نبضة في الدقيقة بإيقاع ثابت. قد تشير النتائج غير الطبيعية إلى عدم انتظام ضربات القلب أو دليل على نوبة قلبية أو حالات أخرى."
+            },
+            { 
+                name: "اختبار الإجهاد", 
+                info: "يقيس القلب تحت الضغط",
+                benefits: [
+                    "يقيم أداء القلب تحت الجهد",
+                    "يساعد في تشخيص مرض الشريان التاجي",
+                    "يقيم فعالية العلاجات القلبية",
+                    "يحدد مستويات آمنة من التمارين"
+                ],
+                description: "يتضمن اختبار الإجهاد عادةً المشي على جهاز المشي أو ركوب دراجة ثابتة أثناء مراقبة إيقاع قلبك وضغط الدم والتنفس. يظهر الاختبار كيف يعمل قلبك أثناء النشاط البدني.",
+                preparation: "قد يُطلب منك عدم تناول الطعام أو الشراب أو التدخين لفترة قبل الاختبار. ارتدِ ملابس وأحذية مريحة مناسبة للتمارين الرياضية.",
+                resultsInfo: "تظهر النتائج الطبيعية أن قلبك يمكنه التعامل مع زيادة عبء العمل. قد تشير النتائج غير الطبيعية إلى انخفاض تدفق الدم إلى عضلة القلب."
+            }
+        ]
+    },
+    diabetes: {
+        name: "السكري",
+        symptoms: [
+            "كثرة التبول", 
+            "العطش الشديد", 
+            "فقدان الوزن", 
+            "التعب", 
+            "عدم وضوح الرؤية",
+            "بطء التئام الجروح أو القروح",
+            "الالتهابات المتكررة",
+            "وخز أو خدر في اليدين/القدمين",
+            "زيادة الجوع",
+            "جفاف الفم",
+            "حكة في الجلد",
+            "بقع جلدية داكنة (خاصة في الإبطين والرقبة)"
+        ],
+        tests: [
+            { 
+                name: "فحص سكر الدم", 
+                info: "يقيس مستويات الجلوكوز",
+                benefits: [
+                    "يوفر مستوى السكر في الدم على الفور",
+                    "يساعد في الإدارة اليومية لمرض السكري",
+                    "نتائج سريعة لتعديل العلاج",
+                    "يمكن إجراؤه في المنزل باستخدام مقياس السكر"
+                ],
+                description: "يقيس اختبار الجلوكوز في الدم مستويات الجلوكوز في دمك. الجلوكوز هو نوع من السكر وهو المصدر الرئيسي للطاقة في جسمك.",
+                preparation: "عادة ما يكون الصيام لمدة 8-12 ساعة مطلوبًا لقياس سكر الدم الصائم بدقة.",
+                resultsInfo: "مستوى السكر الطبيعي في الدم الصائم أقل من 100 مجم/دل. قد تشير النتائج بين 100-125 مجم/دل إلى مقدمات السكري، و126 مجم/دل أو أعلى قد تشير إلى مرض السكري."
+            },
+            { 
+                name: "اختبار A1C", 
+                info: "متوسط سكر الدم لمدة 3 أشهر",
+                benefits: [
+                    "يظهر التحكم في الجلوكوز على المدى الطويل",
+                    "يساعد في التنبؤ بمضاعفات السكري",
+                    "لا يتطلب الصيام قبل الاختبار",
+                    "يستخدم لتعديل خطط العلاج"
+                ],
+                description: "يقيس اختبار A1C متوسط مستوى السكر في الدم خلال الشهرين أو الثلاثة أشهر الماضية. يُطلق عليه أيضًا اختبار الهيموغلوبين السكري أو اختبار الهيموغلوبين الغليكوزيلاتي.",
+                preparation: "لا يلزم أي تحضير خاص. لا تحتاج إلى الصيام قبل هذا الاختبار.",
+                resultsInfo: "A1C أقل من 5.7٪ طبيعي، بين 5.7-6.4٪ يشير إلى مقدمات السكري، و6.5٪ أو أعلى يشير إلى مرض السكري."
+            }
+        ]
+    },
+    cancer: {
+        name: "السرطان",
+        symptoms: [
+            "فقدان الوزن غير المبرر", 
+            "التعب المستمر", 
+            "كتل", 
+            "تغيرات في الجلد", 
+            "سعال مستمر",
+            "تغيرات في عادات الأمعاء أو المثانة",
+            "نزيف أو إفرازات غير عادية",
+            "صعوبة في البلع",
+            "عسر هضم مستمر أو انزعاج بعد الأكل",
+            "ألم غير مبرر في العضلات أو المفاصل",
+            "حمى مستمرة أو تعرق ليلي",
+            "تغيرات في الشامات أو تصبغ الجلد",
+            "بحة في الصوت لا تزول"
+        ],
+        tests: [
+            { 
+                name: "خزعة", 
+                info: "فحص الأنسجة",
+                benefits: [
+                    "يوفر تشخيصًا نهائيًا للسرطان",
+                    "يحدد نوع السرطان ومرحلته",
+                    "يساعد في توجيه قرارات العلاج",
+                    "يمكن إجراؤه بتقنيات طفيفة التوغل"
+                ],
+                description: "الخزعة هي إجراء طبي يتضمن أخذ عينة صغيرة من أنسجة الجسم لفحصها تحت المجهر للتحقق من السرطان أو غيرها من التشوهات.",
+                preparation: "يعتمد التحضير على نوع الخزعة. قد تحتاج إلى التوقف عن تناول أدوية معينة والصيام قبل الإجراء.",
+                resultsInfo: "تستغرق النتائج عادة بضعة أيام. يفحص أخصائي علم الأمراض عينة الأنسجة لتحديد ما إذا كانت هناك خلايا سرطانية ونوعها."
+            },
+            { 
+                name: "فحص CT", 
+                info: "تصوير تفصيلي للجسم",
+                benefits: [
+                    "ينتج صورًا مقطعية مفصلة",
+                    "يكشف عن الأورام والتشوهات",
+                    "يوجه الخزعات والعلاجات",
+                    "أداة تشخيصية غير جراحية"
+                ],
+                description: "يستخدم فحص التصوير المقطعي المحوسب (CT) الأشعة السينية وتكنولوجيا الكمبيوتر لإنتاج صور مفصلة لداخل جسمك.",
+                preparation: "قد تحتاج إلى تجنب تناول الطعام لبضع ساعات قبل الفحص. قد تحتاج إلى شرب مادة تباين أو الحصول على حقنة وريدية.",
+                resultsInfo: "يفسر أخصائي الأشعة الصور ويبحث عن التشوهات. تكون النتائج متاحة عادة في غضون أيام قليلة."
+            }
+        ]
+    }
+};
+
+// Global variables
+let currentDisease = null;
+let currentQuestion = 0;
+let answers = [];
+let extraSymptoms = [];
+let riskChart = null;
+
+// Initialize assessment
+document.addEventListener('DOMContentLoaded', function() {
+    // Only initialize on tests page
+    if (!document.getElementById('disease-tests')) return;
+  
+    // Disease selection
+    document.querySelectorAll('.start-assessment').forEach(button => {
+        button.addEventListener('click', function() {
+            currentDisease = this.dataset.disease;
+            document.getElementById('current-disease').textContent = 
+                `فحص أعراض ${diseases[currentDisease].name}`;
+            
+            document.getElementById('disease-tests').style.display = 'none';
+            document.getElementById('assessment-section').style.display = 'block';
+            showQuestion(0);
+        });
+    });
+  
+    // Cancel checkup
+    document.getElementById('cancel-checkup')?.addEventListener('click', resetCheckup);
+  
+    // Answer buttons
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('answer-btn')) {
+            const answer = e.target.dataset.answer;
+            answers.push(answer);
+            currentQuestion++;
+            
+            if (currentQuestion < diseases[currentDisease].symptoms.length) {
+                showQuestion(currentQuestion);
+            } else {
+                document.getElementById('question-container').style.display = 'none';
+                document.getElementById('additional-symptom').style.display = 'block';
+            }
+        }
+    });
+  
+    // Add symptom
+    document.getElementById('add-symptom')?.addEventListener('click', function() {
+        const symptom = document.getElementById('extra-symptom').value.trim();
+        if (symptom) {
+            if (!extraSymptoms.includes(symptom)) {
+                extraSymptoms.push(symptom);
+                updateAddedSymptoms();
+                document.getElementById('extra-symptom').value = '';
+            } else {
+                alert('تمت إضافة هذا العرض بالفعل');
+            }
+        }
+    });
+  
+    // Finish checkup
+    document.getElementById('finish-checkup')?.addEventListener('click', calculateResults);
+  
+    // New checkup
+    document.getElementById('new-checkup')?.addEventListener('click', resetCheckup);
+});
+
+// Update added symptoms list
+function updateAddedSymptoms() {
+    const container = document.getElementById('added-symptoms');
+    container.innerHTML = extraSymptoms.map(symptom => {
+        const isMeaningful = isMeaningfulSymptom(symptom);
+        const badgeClass = isMeaningful ? 'bg-secondary' : 'bg-warning text-dark';
+        return `
+            <span class="badge ${badgeClass} me-2 mb-2">
+                ${symptom} 
+                <button class="btn-close btn-close-white btn-close-symptom ms-1" 
+                        data-symptom="${symptom}" 
+                        aria-label="إزالة"></button>
+            </span>
+        `;
+    }).join('');
+    
+    // Rest of the function remains the same...
+    document.querySelectorAll('.btn-close-symptom').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const symptomToRemove = this.dataset.symptom;
+            extraSymptoms = extraSymptoms.filter(s => s !== symptomToRemove);
+            updateAddedSymptoms();
+        });
+    });
+}
+
+// Show current question
+function showQuestion(index) {
+    const container = document.getElementById('question-container');
+    const symptom = diseases[currentDisease].symptoms[index];
+    const progress = ((index + 1) / diseases[currentDisease].symptoms.length * 100).toFixed(0);
+    
+    document.getElementById('current-question').textContent = index + 1;
+    document.getElementById('total-questions').textContent = diseases[currentDisease].symptoms.length;
+    document.getElementById('question-progress').style.width = `${progress}%`;
+    
+    container.innerHTML = `
+        <div class="question-text mb-4">
+            <h5>هل تعاني من: <strong>${symptom}</strong>؟</h5>
+        </div>
+        <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-success answer-btn" data-answer="yes">نعم</button>
+            <button class="btn btn-danger answer-btn" data-answer="no">لا</button>
+        </div>
+    `;
+}
+document.getElementById('add-symptom')?.addEventListener('click', function() {
+    const symptom = document.getElementById('extra-symptom').value.trim();
+    if (symptom) {
+        // Check if symptom is already in the main symptoms list
+        const isMainSymptom = diseases[currentDisease].symptoms.includes(symptom);
+        
+        if (isMainSymptom) {
+            alert('هذا العرض تم سؤالك عنه بالفعل في الأسئلة السابقة');
+            return;
+        }
+        
+        if (!extraSymptoms.includes(symptom)) {
+            // Check if symptom is meaningful (at least 3 Arabic characters)
+            if (isMeaningfulSymptom(symptom)) {
+                extraSymptoms.push(symptom);
+                updateAddedSymptoms();
+                document.getElementById('extra-symptom').value = '';
+            } else {
+                alert('يبدو أن هذا العرض غير واضح. يرجى إدخال عرض واضح أو استشارة الطبيب بشأنه.');
+            }
+        } else {
+            alert('تمت إضافة هذا العرض بالفعل');
+        }
+    }
+});
+function isMeaningfulSymptom(symptom) {
+    // Check for minimum length (at least 3 Arabic characters)
+    if (symptom.length < 3) return false;
+    
+    // Check if it contains at least one Arabic letter (to exclude numbers/symbols)
+    const arabicLetterRegex = /[\u0600-\u06FF]/;
+    if (!arabicLetterRegex.test(symptom)) return false;
+    
+    // You could add more sophisticated validation here if needed
+    // For example, check against a list of common meaningless words
+    
+    return true;
+}
+
+// Calculate and display results
+function calculateResults() {
+    const yesCount = answers.filter(a => a === 'yes').length;
+    const totalQuestions = diseases[currentDisease].symptoms.length;
+    
+    // Improved risk calculation
+    const baseRisk = (yesCount / totalQuestions) * 100;
+    const extraRisk = extraSymptoms.length * (10 / 100) * (100 - baseRisk);
+    const riskPercentage = Math.min(100, Math.round(baseRisk + extraRisk));
+    
+    // Minimum 5% risk if any symptoms are present
+    const finalRiskPercentage = (yesCount > 0 || extraSymptoms.length > 0) 
+        ? Math.max(5, riskPercentage) 
+        : 0;
+    
+    document.getElementById('assessment-section').style.display = 'none';
+    document.getElementById('results-section').style.display = 'block';
+    
+    renderRiskChart(finalRiskPercentage);
+    renderRecommendedTests();
+    renderRecommendations(finalRiskPercentage);
+    
+    // Scroll to results
+    document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Render risk chart
+function renderRiskChart(percentage) {
+    const ctx = document.getElementById('riskChart').getContext('2d');
+    
+    // Destroy previous chart if it exists
+    if (riskChart) {
+        riskChart.destroy();
+    }
+    
+    riskChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['تقييم المخاطر الخاص بك'],
+            datasets: [{
+                label: 'نسبة الخطر',
+                data: [percentage],
+                backgroundColor: getRiskColor(percentage),
+                borderColor: '#495057',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        stepSize: 20,
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'نسبة الخطر',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'نتيجة التقييم',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.parsed.y + '% مستوى خطر (' + getRiskLevel(context.parsed.y) + ')';
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Get risk color based on percentage
+function getRiskColor(percentage) {
+    if (percentage > 80) return '#dc3545'; // خطر عال جدًا - أحمر
+    if (percentage > 60) return '#fd7e14'; // خطر عال - برتقالي
+    if (percentage > 40) return '#ffc107'; // خطر متوسط - أصفر
+    if (percentage > 20) return '#20c997'; // خطر منخفض - أزرق
+    return '#28a745'; // خطر منخفض جدًا - أخضر
+}
+
+// Get risk level text in Arabic
+function getRiskLevel(percentage) {
+    if (percentage > 80) return "خطر عال جدًا";
+    if (percentage > 60) return "خطر عال";
+    if (percentage > 40) return "خطر متوسط";
+    if (percentage > 20) return "خطر منخفض";
+    if (percentage > 0) return "خطر منخفض جدًا";
+    return "لا يوجد خطر";
+}
+
+// Render recommended tests
+function renderRecommendedTests() {
+    const container = document.getElementById('recommended-tests');
+    container.innerHTML = diseases[currentDisease].tests.map(test => `
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="h5 mb-0">${test.name}</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">${test.info}</p>
+                    <h4 class="h6 mt-3">الفوائد الرئيسية:</h4>
+                    <ul class="list-group list-group-flush mb-3">
+                        ${test.benefits.map(benefit => `
+                            <li class="list-group-item">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                ${benefit}
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <button class="btn btn-outline-primary btn-sm learn-more-btn" 
+                            data-test="${test.name.replace(/\s+/g, '-').toLowerCase()}">
+                        <i class="fas fa-info-circle me-1"></i> تعرف على المزيد حول هذا الاختبار
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    // Add event listeners for learn more buttons
+    document.querySelectorAll('.learn-more-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const testId = this.dataset.test;
+            showTestDetails(testId);
+        });
+    });
+}
+
+// Show test details modal
+function showTestDetails(testId) {
+    const test = diseases[currentDisease].tests.find(t => 
+        t.name.replace(/\s+/g, '-').toLowerCase() === testId);
+    
+    if (!test) return;
+
+    // Create modal HTML in Arabic
+    const modalHtml = `
+        <div class="modal fade" id="testDetailsModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h2 class="h5 modal-title">${test.name}</h2>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="h6">وصف الاختبار:</h3>
+                        <p>${test.description}</p>
+                        
+                        <h3 class="h6 mt-4">التحضير:</h3>
+                        <p>${test.preparation}</p>
+                        
+                        <h3 class="h6 mt-4">فهم النتائج:</h3>
+                        <p>${test.resultsInfo}</p>
+                        
+                        <h3 class="h6 mt-4">الإجراء النموذجي:</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">
+                                <i class="fas fa-clock text-info me-2"></i>
+                                <strong>المدة:</strong> ${getTestDuration(test.name)}
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-procedures text-info me-2"></i>
+                                <strong>المكان:</strong> ${getTestSetting(test.name)}
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-user-md text-info me-2"></i>
+                                <strong>يتم إجراؤه بواسطة:</strong> ${getTestPerformer(test.name)}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal to DOM
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    
+    // Show modal
+    const modal = new bootstrap.Modal(document.getElementById('testDetailsModal'));
+    modal.show();
+    
+    // Remove modal after it's closed
+    document.getElementById('testDetailsModal').addEventListener('hidden.bs.modal', function() {
+        this.remove();
+    });
+}
+
+// Helper functions for test details in Arabic
+function getTestDuration(testName) {
+    const durations = {
+        "تخطيط القلب الكهربائي (ECG)": "5-10 دقائق",
+        "اختبار الإجهاد": "15-30 دقيقة",
+        "فحص سكر الدم": "بضع دقائق",
+        "اختبار A1C": "بضع دقائق",
+        "خزعة": "15-60 دقيقة حسب النوع",
+        "فحص CT": "10-30 دقيقة"
+    };
+    return durations[testName] || "يختلف";
+}
+
+function getTestSetting(testName) {
+    const settings = {
+        "تخطيط القلب الكهربائي (ECG)": "عيادة الطبيب أو المستشفى",
+        "اختبار الإجهاد": "المستشفى أو العيادة المتخصصة",
+        "فحص سكر الدم": "العيادة أو يمكن إجراؤه في المنزل",
+        "اختبار A1C": "العيادة أو المختبر",
+        "خزعة": "المستشفى أو مركز الجراحة الخارجية",
+        "فحص CT": "المستشفى أو مركز التصوير"
+    };
+    return settings[testName] || "منشأة طبية";
+}
+
+function getTestPerformer(testName) {
+    const performers = {
+        "تخطيط القلب الكهربائي (ECG)": "ممرض أو فني",
+        "اختبار الإجهاد": "طبيب قلب بمساعدة فني",
+        "فحص سكر الدم": "ممرض، فني، أو المريض (للاختبار المنزلي)",
+        "اختبار A1C": "فني مختبر",
+        "خزعة": "جراح أو أخصائي أشعة",
+        "فحص CT": "فني الأشعة"
+    };
+    return performers[testName] || "أخصائي طبي";
+}
+
+// Render recommendations in Arabic
+function renderRecommendations(percentage) {
+    const container = document.getElementById('health-recommendations');
+    const riskLevel = getRiskLevel(percentage);
+    const riskClass = getRiskClass(percentage);
+    const recommendations = getRecommendations(currentDisease, percentage);
+    const followupTimeline = getFollowupTimeline(percentage);
+    
+    container.innerHTML = `
+        <!-- First Row: Risk Assessment + Health Recommendations -->
+        <div class="row mb-4">
+            <!-- Risk Assessment -->
+            <div class="col-md-6 mb-3 mb-md-0">
+                <div class="card h-100 border-${riskClass}">
+                    <div class="card-header bg-${riskClass} text-white">
+                        <h3 class="h5 mb-0">تقييم المخاطر</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <div class="display-4 text-${riskClass}">${percentage}%</div>
+                            <p class="mb-2">${riskLevel}</p>
+                        </div>
+                        <div class="alert alert-${riskClass} small mb-3">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <strong>هام:</strong> هذا ليس تشخيصًا.
+                        </div>
+                        <div class="alert alert-info small">
+                            <i class="fas fa-calendar-check me-2"></i>
+                            <strong>المتابعة:</strong> ${followupTimeline}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Health Recommendations -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">التوصيات الصحية</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            ${recommendations.map((item, index) => `
+                                <li class="list-group-item py-2">
+                                    <span class="badge bg-info me-2">${index + 1}</span>
+                                    ${item}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        ${extraSymptoms.length > 0 ? `
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="h5 mb-0">الأعراض الإضافية المبلغ عنها</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        ${extraSymptoms.map(symptom => `
+                            <li class="list-group-item">
+                                <i class="fas fa-plus-circle text-primary me-2"></i>
+                                ${symptom}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            </div>
+        ` : ''}
+    `;
+    
+    // Initialize chart and buttons
+    setTimeout(() => {
+        renderRiskChart(percentage);
+        
+        document.querySelectorAll('.learn-more-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const testId = this.dataset.test;
+                showTestDetails(testId);
+            });
+        });
+    }, 100);
+}
+
+// Get risk class for styling
+function getRiskClass(percentage) {
+    if (percentage > 80) return "danger";
+    if (percentage > 60) return "warning";
+    if (percentage > 40) return "info";
+    if (percentage > 20) return "primary";
+    return "success";
+}
+
+// Get follow-up timeline in Arabic
+function getFollowupTimeline(percentage) {
+    if (percentage > 80) return "يوصى باستشارة فورية (خلال 3 أيام)";
+    if (percentage > 60) return "حدد موعدًا خلال أسبوع واحد";
+    if (percentage > 40) return "حدد موعدًا للفحص خلال الشهر القادم";
+    if (percentage > 20) return "الفحص الروتيني التالي (خلال 3-6 أشهر)";
+    return "يوصى بإجراء فحوصات سنوية منتظمة";
+}
+
+// Get recommendations based on disease and risk percentage in Arabic
+function getRecommendations(disease, percentage) {
+    const baseRecommendations = {
+        "heart": [
+            "الحفاظ على نظام غذائي صحي للقلب منخفض الدهون المشبعة",
+            "ممارسة النشاط البدني بانتظام (30 دقيقة/يوم)",
+            "مراقبة ضغط الدم بانتظام",
+            "إدارة الإجهاد من خلال تقنيات الاسترخاء",
+            "تجنب التبغ والحد من استهلاك الكحول"
+        ],
+        "diabetes": [
+            "مراقبة مستويات السكر في الدم بانتظام",
+            "اتباع نظام غذائي متوازن مع التحكم في الكربوهيدرات",
+            "ممارسة النشاط البدني بانتظام",
+            "الحفاظ على وزن صحي",
+            "جدولة فحوصات العين والقدم بانتظام"
+        ],
+        "cancer": [
+            "اتباع إرشادات الفحص الموصى بها",
+            "تجنب التبغ والحد من الكحول",
+            "حماية الجلد من التعرض المفرط للشمس",
+            "الحفاظ على وزن صحي ونمط حياة نشط",
+            "كن على علم بتاريخ عائلتك مع السرطان"
+        ]
+    };
+    
+    const specificRecommendations = {
+        "heart": {
+            high: [
+                "حدد موعدًا لاستشارة طبيب القلب على الفور",
+                "فكر في إجراء اختبار إجهاد القلب",
+                "ناقش خيارات الأدوية مع طبيبك",
+                "تعلم الإنعاش القلبي الرئوي وعلامات النوبة القلبية",
+                "قم بإنشاء خطة عمل طارئة"
+            ],
+            moderate: [
+                "حدد موعدًا مع طبيب الرعاية الأولية",
+                "فكر في إجراء فحص الدهون والجلوكوز",
+                "ابدأ برنامج تمارين تدريجي",
+                "قلل من تناول الصوديوم",
+                "راقب التغييرات في الأعراض"
+            ]
+        },
+        "diabetes": {
+            high: [
+                "استشر أخصائي الغدد الصماء على الفور",
+                "ابدأ مراقبة سكر الدم 2-4 مرات يوميًا",
+                "ابدأ برنامج تعليمي عن مرض السكري",
+                "ناقش خيارات الأدوية",
+                "قم بإنشاء خطة وجبات مع أخصائي تغذية"
+            ],
+            moderate: [
+                "جدولة اختبار تحمل الجلوكوز",
+                "ابدأ مراقبة سكر الدم الصائم",
+                "ابدأ روتين التمارين المنتظمة",
+                "قلل من تناول السكر والكربوهيدرات المكررة",
+                "راقب أعراض ارتفاع/انخفاض سكر الدم"
+            ]
+        },
+        "cancer": {
+            high: [
+                "استشر أخصائي الأورام أو المتخصص على الفور",
+                "ناقش اختبارات الفحص المناسبة",
+                "قم بتوثيق جميع الأعراض والتغييرات",
+                "فكر في الاستشارة الوراثية إذا لزم الأمر",
+                "ابحث عن خيارات مراكز العلاج"
+            ],
+            moderate: [
+                "جدولة اختبارات الفحص المناسبة",
+                "قم بتوثيق أي أعراض مستمرة",
+                "راجع التاريخ الطبي العائلي",
+                "اعتمد نمط حياة يقي من السرطان",
+                "ابق على اطلاع بفحوصات الفحص الموصى بها"
+            ]
+        }
+    };
+    
+    let recommendations = [...baseRecommendations[disease]];
+    
+    if (percentage > 60) {
+        recommendations = [...specificRecommendations[disease].high, ...recommendations.slice(0, 2)];
+    } else if (percentage > 30) {
+        recommendations = [...specificRecommendations[disease].moderate, ...recommendations.slice(0, 3)];
+    }
+    
+    // Limit to 5 recommendations
+    return recommendations.slice(0, 5);
+}
+
+// Reset the checkup process
+function resetCheckup() {
+    currentDisease = null;
+    currentQuestion = 0;
+    answers = [];
+    extraSymptoms = [];
+    document.getElementById('extra-symptom').value = '';
+    document.getElementById('results-section').style.display = 'none';
+    document.getElementById('disease-tests').style.display = 'block';
+    document.getElementById('assessment-section').style.display = 'none';
+    document.getElementById('question-container').style.display = 'block';
+    document.getElementById('additional-symptom').style.display = 'none';
+    
+    // Clear any existing chart
+    if (riskChart) {
+        riskChart.destroy();
+        riskChart = null;
+    }
+    
+    // Scroll back to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
