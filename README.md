@@ -4,15 +4,15 @@
     It features a Flask backend and a responsive Bootstrap frontend.
 
   ## Frontend
-  - Bootstrap 5.3.3 – تصميم واجهات متجاوبة  
-  - Font Awesome 6.7.2 – أيقونات  
-  - Chart.js – رسم بياني تفاعلي  
+  - Bootstrap 5.3.3   
+  - Font Awesome 6.7.2 
+  - Chart.js 
   - HTML + CSS + JavaScript
  ## Backend
   - Python 3.9+
-  - Flask – لبناء API
-  - NLTK – تحليل لغوي للأعراض
-  - Scikit-learn – تدريب نموذج Naive Bayes
+  - Flask
+  - NLTK 
+  - Scikit-learn
 
 # Repository Structure:  
  /src/         → Python Flask backend code
