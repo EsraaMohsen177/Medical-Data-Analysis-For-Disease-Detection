@@ -25,7 +25,7 @@
  
  README.md     → This guide
 
-# Requirments: 
+# Requirements: 
  ## Install the following:
   - Python 3.9+
   - pip (comes with Python)
