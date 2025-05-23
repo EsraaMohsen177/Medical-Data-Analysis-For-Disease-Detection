@@ -1,0 +1,75 @@
+from flask import Flask, request, jsonify
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from difflib import get_close_matches
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+nltk.download('punkt')
+nltk.download('stopwords')
+
+app = Flask(_name_)
+
+diseases_data = {
+    "Diabetes": ["Frequent urination", "Excessive thirst", "Weight loss", "Fatigue", "Blurred vision", 
+                 "Slow healing cuts or sores", "Frequent infections", "Tingling or numbness in hands/feet", 
+                 "Increased hunger", "Dry mouth", "Itchy skin", "Darkened skin patches"],
+    
+    "Heart Disease": ["Chest pain", "Shortness of breath", "Arm/jaw pain", "Irregular heartbeat", "Swelling in legs", 
+                      "Dizziness or lightheadedness", "Nausea or indigestion", "Cold sweats", "Fatigue during normal activities", 
+                      "Persistent cough or wheezing", "Rapid weight gain"],
+    
+    "Cancer": ["Unexplained weight loss", "Persistent fatigue", "Lumps", "Skin changes", "Persistent cough", 
+               "Changes in bowel or bladder habits", "Unusual bleeding or discharge", "Difficulty swallowing", 
+               "Persistent indigestion or discomfort after eating", "Unexplained muscle or joint pain", 
+               "Persistent fevers or night sweats", "Changes in moles or skin pigmentation", "Hoarseness that does not go away"]
+}
+
+symptoms_list = []
+disease_labels = []
+
+for disease, symptoms in diseases_data.items():
+    symptoms_list.extend(symptoms)
+    disease_labels.extend([disease] * len(symptoms))
+
+def preprocess_text(text):
+    words = word_tokenize(text.lower())
+    return " ".join(word for word in words if word.isalnum() and word not in stopwords.words("english"))
+
+def get_closest_symptom(user_input):
+    matches = get_close_matches(user_input, symptoms_list, n=1, cutoff=0.6)
+    return matches[0] if matches else None
+
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(symptoms_list)
+model = MultinomialNB()
+model.fit(X, disease_labels)
+
+def predict_disease(user_symptoms):
+    symptom_vector = vectorizer.transform([" ".join(user_symptoms)])
+    return model.predict(symptom_vector)[0]
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    user_symptoms = [symptom.strip() for symptom in data.get("symptoms", [])]
+    
+    matched_symptoms = []
+    for symptom in user_symptoms:
+        cleaned_symptom = preprocess_text(symptom)
+        closest_match = get_closest_symptom(cleaned_symptom)
+        if closest_match:
+            matched_symptoms.append(closest_match)
+
+    if matched_symptoms:
+        predicted_disease = predict_disease(matched_symptoms)
+        return jsonify({
+            "matched_symptoms": matched_symptoms,
+            "predicted_disease": predicted_disease
+        })
+    else:
+        return jsonify({"error": "No matching symptoms found"}), 400
+
+if _name_ == "_main_":
+    app.run(debug=True)
