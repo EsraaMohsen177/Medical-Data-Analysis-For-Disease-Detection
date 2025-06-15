@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Health Symptom Checker - Assess your risk for heart disease, diabetes, and cancer">
+    <title>Health Symptom Checker | Risk Assessment Tool</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
+    <link rel="preload" href="../static/css/styles.min.css" as="style">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+   
+    <link rel="stylesheet" href="../static/css/styles.min.css">
+
+
+
+    <!-- Favicon -->
+  
+     <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../static/img/apple-touch-icon.png">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="nav_bar">
+        <div class="container">
+            <a class="navbar-brand"  href="../templates/index.html" aria-label="Health Symptom Checker Home">
+                <img src="../static/img/image (4).png" alt="Health Symptom Checker Logo" width="100" height="60" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../templates/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../templates/services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../templates/tests.html">Tests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../templates/contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../static/ar/index.html" aria-label="Switch to Arabic">
+                            <i class="fas fa-language me-1"></i>
+                            <span class="d-none d-md-inline">العربية</span>
+                            <span class="d-inline d-md-none">AR</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--slider -->
+    <section id="slider" aria-label="Health condition examples">
+        <div id="headerslider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#headerslider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#headerslider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#headerslider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="img-container">
+                        <img src="../static/img/heart2.png" class="d-block w-100" alt="Heart disease scanning illustration" loading="lazy" width="1200" height="600">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <h2>Heart Disease Risk Assessment</h2>
+                        <p class="lead">Early detection can save lives</p>
+                        <a href="../templates/tests.html#heart" class="btn btn-primary btn-lg mt-3">Check Your Risk</a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="img-container">
+                        <img src="../static/img/diabetse.png" class="d-block w-100" alt="Diabetes scanning illustration" loading="lazy" width="1200" height="600">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <h2>Diabetes Screening</h2>
+                        <p class="lead">Know your risk factors</p>
+                        <a href="../templates/tests.html#diabetes" class="btn btn-primary btn-lg mt-3">Assess Symptoms</a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="img-container">
+                        <img src="../static/img/cancer.png" class="d-block w-100" alt="Cancer scanning illustration" loading="lazy" width="1200" height="600">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <h2>Cancer Risk Evaluation</h2>
+                        <p class="lead">Early awareness matters</p>
+                        <a href="../templates/tests.html#cancer" class="btn btn-primary btn-lg mt-3">Start Screening</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#headerslider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#headerslider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+<!-- end slider -->
+    
+        <!--  Content -->
+        <main class="container my-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="mb-4">Welcome to Health Symptom Checker</h1>
+                    <p class="lead">Your personalized health risk assessment tool</p>
+                    <p>Our platform helps you understand your risk factors for three major health conditions: heart disease, diabetes, and cancer. By answering simple questions about your symptoms and lifestyle, you'll receive a personalized risk assessment with actionable recommendations.</p>
+                    
+                    <div class="row mt-4 g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-heartbeat fa-3x text-danger mb-3"></i>
+                                    <h3 class="h5">Heart Disease</h3>
+                                    <p>Assess your cardiovascular health</p>
+                                    <a href="../templates/tests.html#heart" class="btn btn-sm btn-outline-danger">Check Risk</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-syringe fa-3x text-primary mb-3"></i>
+                                    <h3 class="h5">Diabetes</h3>
+                                    <p>Evaluate your diabetes risk factors</p>
+                                    <a href="../templates/tests.html#diabetes" class="btn btn-sm btn-outline-primary">Check Risk</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-dna fa-3x text-warning mb-3"></i>
+                                    <h3 class="h5">Cancer</h3>
+                                    <p>Understand your cancer risk profile</p>
+                                    <a href="../templates/tests.html#cancer" class="btn btn-sm btn-outline-warning">Check Risk</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h2 class="h5 mb-0">Quick Assessment</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Answer 3 quick questions to get a preliminary assessment:</p>
+                            <ol class="mb-3">
+                                <li>Do you have a family history of these diseases?</li>
+                                <li>Are you over 40 years old?</li>
+                                <li>Do you experience any persistent symptoms?</li>
+                            </ol>
+                            <a href="../templates/tests.html" class="btn btn-primary w-100">Start Quick Assessment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <!-- end content -->
+
+        <!--  start Footer -->
+        <footer class="bg-dark text-white py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <h2 class="h5 text-uppercase mb-4">Health Symptom Checker</h2>
+                        <p>A graduation project by Amira, Esraa, and Malak from the Computer Science & Statistics Department at Ain Shams University, Class of 2025.</p>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <h2 class="h5 text-uppercase mb-4">Quick Links</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="../templates/index.html" class="text-white text-decoration-none">Home</a></li>
+                            <li class="mb-2"><a href="../templates/about.html" class="text-white text-decoration-none">About</a></li>
+                            <li class="mb-2"><a href="../templates/services.html" class="text-white text-decoration-none">Services</a></li>
+                            <li class="mb-2"><a href="../templates/tests.html" class="text-white text-decoration-none">Tests</a></li>
+                            <li class="mb-2"><a href="../templates/contact.html" class="text-white text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <h2 class="h5 text-uppercase mb-4">Project Guidance</h2>
+                        <p>Supervised by <strong>Prof. Dr. Azza Abd-El Rahman</strong></p>
+                    </div>
+                </div>
+                
+                <hr class="my-4 bg-light">
+                
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="small mb-0">&copy; 2025 Health Symptom Checker. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="small mb-0">
+                            <em>Note: This is an academic project and not intended for medical diagnosis.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- Back to Top -->
+        <button id="back-to-top" class="btn btn-primary rounded-circle shadow" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    
+
+    <!-- Java links -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous" defer></script>
+    <script src="../static/js/main.min.js" defer></script>
+</body>
+</html>
