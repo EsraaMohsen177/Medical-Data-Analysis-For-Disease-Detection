@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Health Symptom Checker - Assess your risk for heart disease, diabetes, and cancer">
+    <title>Disease Risk Assessment | Health Symptom Checker</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/chart.js" as="script">
+    <link rel="preload" href="../static/css/styles.min.css" as="style">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/styles.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../static/img/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="nav_bar">
+        <div class="container">
+            <a class="navbar-brand" href="../templates/index.html" aria-label="Health Symptom Checker Home">
+                <img src="../static/img/image (4).png" alt="Health Symptom Checker Logo" width="100" height="60" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../templates/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../templates/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../templates/services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../templates/tests.html">Tests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../templates/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../static/ar/index.html" aria-label="Switch to Arabic">
+                            <i class="fas fa-language me-1"></i>
+                            <span class="d-none d-md-inline">العربية</span>
+                            <span class="d-inline d-md-none">AR</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Disease Tests -->
+    <section id="disease-tests" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-5 mb-3">Disease Risk Assessment</h1>
+                <p class="lead">Select a condition to begin your symptom assessment</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" id="heart">
+                    <div class="card disease-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="../static/img/heart.png" class="card-img h-100" alt="Heart illustration" loading="lazy" width="400" height="300">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-white text-center overlay-gradient">
+                            <h2 class="card-title h2">Heart Disease</h2>
+                            <button class="btn btn-outline-light start-assessment" data-disease="heart">Start Assessment</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" id="diabetes">
+                    <div class="card disease-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="../static/img/diabetes-.jpg" class="card-img h-100" alt="Diabetes illustration" loading="lazy" width="400" height="300">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-white text-center overlay-gradient">
+                            <h2 class="card-title h2">Diabetes</h2>
+                            <button class="btn btn-outline-light start-assessment" data-disease="diabetes">Start Assessment</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" id="cancer">
+                    <div class="card disease-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="../static/img/Screenshot 2025-03-24 223718.png" class="card-img h-100" alt="Cancer illustration" loading="lazy" width="400" height="300">
+                        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-white text-center overlay-gradient">
+                            <h2 class="card-title h2">Cancer</h2>
+                            <button class="btn btn-outline-light start-assessment" data-disease="cancer">Start Assessment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Section -- hidden first -->
+    <section id="assessment-section" class="py-5 bg-light" style="display: none;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-header bg-primary text-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h2 id="current-disease" class="h4 mb-0"></h2>
+                                <button id="cancel-checkup" class="btn btn-sm btn-outline-light">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="progress-container" class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <small>Progress</small>
+                                    <small><span id="current-question">0</span>/<span id="total-questions">0</span></small>
+                                </div>
+                                <div class="progress">
+                                    <div id="question-progress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div id="question-container">
+                                <!-- Questions will appear -->
+                            </div>
+                            
+                            <div id="additional-symptom" style="display: none;">
+                                <hr>
+                                <h3 class="h5 mb-3">Add Any Other Symptoms</h3>
+                                <div class="input-group mb-3 has-validation">
+                                    <input type="text" id="extra-symptom" class="form-control" placeholder="Enter additional symptom..." aria-label="Additional symptom">
+                                    <button class="btn btn-primary" id="add-symptom" type="button">
+                                        <i class="fas fa-plus me-1"></i> Add
+                                    </button>
+                                </div>
+                                <div id="added-symptoms" class="mb-3"></div>
+                                <button id="finish-checkup" class="btn btn-primary w-100 py-2">Get Results</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Result Section->  hidden-->
+<section id="results-section" class="py-5" style="display: none;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white">
+                        <h2 class="h4 mb-0">Your Health Assessment</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Risk Chart  -->
+                        <div class="mb-5 text-center">
+                            <h3 class="h4 mb-4">Risk Assessment</h3>
+                            <div class="d-flex justify-content-center">
+                                <div class="chart-container" style="height: 300px; width: 80%; position: relative;">
+                                    <canvas id="riskChart" aria-label="Risk assessment chart" role="img"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                        <div class="mb-4">
+                            <h3 class="h4 mb-4">Recommended Tests</h3>
+                            <div id="recommended-tests" class="row g-4">
+                                <!-- Tests will  apply here -->
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                            <strong>Remember:</strong> This is not a medical diagnosis. Please consult a healthcare professional.
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="mt-4">
+                            <h3 class="h4 mb-3">Health Recommendations</h3>
+                            <div id="health-recommendations"></div>
+                            
+                            <div class="d-flex justify-content-between mt-5">
+                                <button id="new-checkup" class="btn btn-primary">
+                                    <i class="fas fa-redo me-2"></i>Start New Checkup
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+   
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">Health Symptom Checker</h2>
+                    <p>A graduation project by Amira, Esraa, and Malak from the Computer Science & Statistics Department at Ain Shams University, Class of 2025.</p>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">Quick Links</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="../templates/index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="../templates/services.html" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="../templates/about.html" class="text-white text-decoration-none">About Project</a></li>
+                        <li class="mb-2"><a href="../templates/tests.html" class="text-white text-decoration-none">Symptom Checker</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">Project Guidance</h2>
+                    <p>Supervised by <strong>Prof. Dr. Azza Abd-El Rahman</strong></p>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">&copy; 2025 Health Symptom Checker. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">
+                        <em>Note: This is an academic project and not intended for medical diagnosis.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javalinks -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="../static/js/disease-checker.min.js" defer></script>
+    <script src="../static/js/main.min.js" defer></script>
+</body>
+</html>
