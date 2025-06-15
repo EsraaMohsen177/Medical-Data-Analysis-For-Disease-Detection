@@ -1,0 +1,251 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Contact Health Symptom Checker - Get in touch with our team" />
+      <title>Contact Us | Health Symptom Checker</title>
+    
+      <!-- Preload critical resources -->
+      <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" />
+      <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" />
+      <link rel="preload" href="../static/css/styles.min.css" as="style" />
+    
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+      <link rel="stylesheet" href="../static/css/styles.min.css" />
+    
+      <!-- Favicon -->
+      <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="../satic/img/apple-touch-icon.png" />
+    </head>
+    <body>
+      <!-- Nav -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="nav_bar">
+        <div class="container">
+          <a class="navbar-brand" href="../templates/index.html" aria-label="Health Symptom Checker Home">
+            <img src="../static/img/image (4).png" alt="Health Symptom Checker Logo" width="100" height="60" loading="lazy" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="../templates/index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="../templates/about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="../templates/services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="../templates/tests.html">Tests</a></li>
+              <li class="nav-item"><a class="nav-link active" href="../templates/contact.html">Contact</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="../static/ar/index.html" aria-label="Switch to Arabic">
+                  <i class="fas fa-language me-1"></i>
+                  <span class="d-none d-md-inline">العربية</span>
+                  <span class="d-inline d-md-none">AR</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- end nav -->
+      
+
+    <!-- Contact Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="mb-3">Contact Our Health Team</h1>
+                <p class="lead">Get in touch for project inquiries or feedback</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-5 col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <h2 class="h5 mb-4">Send us a message</h2>
+                            <form id="contact-form" novalidate>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">Please enter your name</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">Please enter a valid email</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="3" required></textarea>
+                                    <div class="invalid-feedback">Please enter your message</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5 col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <h2 class="h5 mb-4">Contact Information</h2>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-primary text-white me-3">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="h6 mb-0">Email</h3>
+                                            <a href="mailto:support@healthchecker.com" class="text-decoration-none">support@healthchecker.com</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-primary text-white me-3">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="h6 mb-0">Phone</h3>
+                                            <a href="tel:+11234567890" class="text-decoration-none">+1 (123) 456-7890</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-circle bg-primary text-white me-3">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="h6 mb-0">Address</h3>
+                                            <p class="mb-0">123 Medical Plaza, Health City</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <hr class="my-4">
+                            
+                            <h3 class="h6 mb-3">Technical Support</h3>
+                            <p class="small">For system issues or bug reports:</p>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-circle bg-danger text-white me-3">
+                                    <i class="fas fa-bug"></i>
+                                </div>
+                                <a href="mailto:tech@healthchecker.com" class="text-decoration-none">tech@healthchecker.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- popular questions -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="mb-3">Frequently Asked Questions</h2>
+                <p class="lead">Common questions about our symptom checker</p>
+            </div>
+            
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Is this a replacement for medical diagnosis?
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <strong>No, this is not a replacement for professional medical advice.</strong> Our symptom checker is designed to provide preliminary risk assessments based on your reported symptoms, but it should never replace consultation with a qualified healthcare provider.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How accurate are the results?
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our risk assessments are based on established medical research and symptom patterns. However, accuracy depends on the information you provide. The results should be considered as general guidance rather than definitive medical conclusions.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Is my health information stored?
+                        </button>
+                    </h3>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <strong>We do not store any personal health information.</strong> Your responses are processed in real-time to generate your risk assessment, but no data is saved on our servers after your session ends.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">Health Symptom Checker</h2>
+                    <p>A graduation project by Amira, Esraa, and Malak from the Computer Science & Statistics Department at Ain Shams University, Class of 2025.</p>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">Quick Links</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="../templates/index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="../templates/services.html" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="../templates/about.html" class="text-white text-decoration-none">About Project</a></li>
+                        <li class="mb-2"><a href="../templates/tests.html" class="text-white text-decoration-none">Symptom Checker</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h2 class="h5 text-uppercase mb-4">Project Guidance</h2>
+                    <p>Supervised by <strong>Prof. Dr. Azza Abd-El Rahman</strong></p>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">&copy; 2025 Health Symptom Checker. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">
+                        <em>Note: This is an academic project and not intended for medical diagnosis.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top  -->
+    <button id="back-to-top" class="btn btn-primary rounded-circle shadow" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+      
+      <!-- Javalinks -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+              integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+              crossorigin="anonymous" defer></script>
+      <script src="../static/js/main.min.js" defer></script>
+    </body>
+    </html>
+    
